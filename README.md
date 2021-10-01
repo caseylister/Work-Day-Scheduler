@@ -27,3 +27,7 @@ GIVEN I am using a daily planner to create a schedule
 
 ## Screenshots
 
+![Work Day Scheduler](./assets/scheduler.png)
+
+
+

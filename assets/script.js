@@ -1,7 +1,10 @@
+// Display current date under Header
 var todaysDate = moment().format('dddd, MMM Do YYYY');
 $("#currentDay").html(todaysDate);
 
+// Ready's function
 $(document).ready(function () { 
+    // Save button click listener for input and time
     $(".saveBtn").on("click", function () {
         
         var description = $(this).siblings(".description").val();
@@ -9,7 +12,7 @@ $(document).ready(function () {
 
         localStorage.setItem(hour, description);
     })
-   
+   // Save info to local storage
     $("#time8 .description").val(localStorage.getItem("time8"));
     $("#time9 .description").val(localStorage.getItem("time9"));
     $("#time10 .description").val(localStorage.getItem("time10"));
@@ -21,10 +24,10 @@ $(document).ready(function () {
     $("#time16 .description").val(localStorage.getItem("time16"));
     $("#time17 .description").val(localStorage.getItem("time17"));
 
+    // Display colors based on past, present, or future
     function timeSlots() {
 
         var currentTime = moment().hour();
-
         
         $(".time-block").each(function () {
             var timeBlock = parseInt($(this).attr("id").split("time")[1]);
@@ -48,5 +51,6 @@ $(document).ready(function () {
             }
         })
     }
+    // Runs function
     timeSlots();
 });
